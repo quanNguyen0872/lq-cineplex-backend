@@ -3,6 +3,8 @@ package com.se.cineplex.entity;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -33,12 +35,15 @@ public class DonDat {
 	private NhanVien nhanVien;
 
 	@OneToMany(mappedBy = "donDat")
+	@JsonIgnore
 	private List<Ve> dsVe;
 
 	@OneToMany(mappedBy = "donDat")
+	@JsonIgnore
 	private List<ChiTietDichVu> dsChiTietDichVu;
 
 	@OneToMany(mappedBy = "donDat")
+	@JsonIgnore
 	private List<ChiTietVoucher> dsChiTietVoucher;
 
 	public DonDat() {

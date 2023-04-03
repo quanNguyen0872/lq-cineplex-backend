@@ -3,6 +3,8 @@ package com.se.cineplex.entity;
 import java.io.Serializable;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -27,6 +29,7 @@ public class LoaiDichVu implements Serializable {
 	private String trangThai;
 
 	@OneToMany(mappedBy = "loaiDichVu")
+	@JsonIgnore
 	private List<DichVu> dsDichVu;
 
 	public LoaiDichVu() {

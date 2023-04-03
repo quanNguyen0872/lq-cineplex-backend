@@ -16,7 +16,7 @@ import com.se.cineplex.entity.DonDat;
 import com.se.cineplex.service.DonDatService;
 
 @RestController
-@RequestMapping
+@RequestMapping("/api")
 public class DonDatController {
 	
 	@Autowired

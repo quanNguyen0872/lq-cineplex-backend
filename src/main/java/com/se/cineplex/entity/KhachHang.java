@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.AttributeOverride;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -28,6 +30,7 @@ public class KhachHang extends NguoiDung implements Serializable {
 	private DiaChi diaChi;
 	
 	@OneToMany(mappedBy = "khachHang")
+	@JsonIgnore
 	private List<DonDat> dsDonDat;
 
 	public KhachHang() {
