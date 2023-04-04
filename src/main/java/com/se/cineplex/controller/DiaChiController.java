@@ -28,25 +28,25 @@ public class DiaChiController {
 		
 	}
 	
-	@GetMapping("/diachi/{id}")
+	@GetMapping("/dsdiachi/{id}")
 	public DiaChi findById(@PathVariable int id) {
 		return diaChiService.findById(id);
 	}
 
-	@PostMapping("/diachi")
+	@PostMapping("/dsdiachi")
 	public DiaChi addDiaChi(@RequestBody DiaChi diaChi) {
 		diaChi.setId(0);
 		diaChiService.saveDiaChi(diaChi);
 		return diaChi;
 	}
 
-	@PutMapping("/diachi")
+	@PutMapping("/dsdiachi")
 	public DiaChi updatePhim(@RequestBody DiaChi diaChi) {
 		diaChiService.saveDiaChi(diaChi);
 		return diaChi;
 	}
 
-	@DeleteMapping("/diachi/{id}")
+	@DeleteMapping("/dsdiachi/{id}")
 	public String deleteById(@PathVariable int id) {
 		DiaChi diaChi = diaChiService.findById(id);
 		if (diaChi == null) {

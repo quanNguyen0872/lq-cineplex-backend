@@ -23,25 +23,25 @@ public class ChucVuController {
 		return chucVuService.findAll();
 	}
 
-	@GetMapping("/chucvu/{id}")
+	@GetMapping("/dschucvu/{id}")
 	public ChucVu findById(@PathVariable int id) {
 		return chucVuService.findById(id);
 	}
 
-	@PostMapping("/chucvu")
+	@PostMapping("/dschucvu")
 	public ChucVu addDaoDien(@RequestBody ChucVu chucVu) {
 		chucVu.setId(0);
 		chucVuService.saveChucVu(chucVu);
 		return chucVu;
 	}
 
-	@PutMapping("/chucvu")
+	@PutMapping("/dschucvu")
 	public ChucVu updateChucVu(@RequestBody ChucVu chucVu) {
 		chucVuService.saveChucVu(chucVu);
 		return chucVu;
 	}
 
-	@DeleteMapping("/chucvu/{id}")
+	@DeleteMapping("/dschucvu/{id}")
 	public String deleteById(@PathVariable int id) {
 		ChucVu chucVu = chucVuService.findById(id);
 		if (chucVu == null) {

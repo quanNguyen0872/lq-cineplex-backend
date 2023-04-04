@@ -27,25 +27,25 @@ public class LoaiGheController {
 		return loaiGheService.findAll();
 	}
 
-	@GetMapping("/loaighe/{id}")
+	@GetMapping("/dsloaighe/{id}")
 	public LoaiGhe findById(@PathVariable int id) {
 		return loaiGheService.findById(id);
 	}
 
-	@PostMapping("/loaighe")
+	@PostMapping("/dsloaighe")
 	public LoaiGhe addLoaiGhe(@RequestBody LoaiGhe loaiGhe) {
 		loaiGhe.setId(0);
 		loaiGheService.saveLoaiGhe(loaiGhe);
 		return loaiGhe;
 	}
 
-	@PutMapping("/loaighe")
+	@PutMapping("/dsloaighe")
 	public LoaiGhe updateLoaiGhe(@RequestBody LoaiGhe loaiGhe) {
 		loaiGheService.saveLoaiGhe(loaiGhe);
 		return loaiGhe;
 	}
 
-	@DeleteMapping("/loaighe/{id}")
+	@DeleteMapping("/dsloaighe/{id}")
 	public String deleteById(@PathVariable int id) {
 		LoaiGhe loaiGhe = loaiGheService.findById(id);
 		if (loaiGhe == null) {

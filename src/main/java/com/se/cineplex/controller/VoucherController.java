@@ -27,25 +27,25 @@ public class VoucherController {
 		return voucherService.findAll();
 	}
 	
-	@GetMapping("/voucher/{id}")
+	@GetMapping("/dsvoucher/{id}")
 	public Voucher findById(@PathVariable int id) {
 		return voucherService.findById(id);
 	}
 	
-	@PostMapping("/voucher")
+	@PostMapping("/dsvoucher")
 	public Voucher addVoucher(@RequestBody Voucher voucher) {
 		voucher.setId(0);
 		voucherService.saveVoucher(voucher);
 		return voucher;
 	}
 	
-	@PutMapping("/voucher")
+	@PutMapping("/dsvoucher")
 	public Voucher updateVoucher(@RequestBody Voucher voucher) {
 		voucherService.saveVoucher(voucher);
 		return voucher;
 	}
 	
-	@DeleteMapping("/voucher/{id}")
+	@DeleteMapping("/dsvoucher/{id}")
 	public String deleteById(@PathVariable int id) {
 		Voucher voucher = voucherService.findById(id);
 		if (voucher == null) {

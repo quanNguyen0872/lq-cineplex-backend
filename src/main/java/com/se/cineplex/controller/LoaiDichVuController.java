@@ -27,25 +27,25 @@ public class LoaiDichVuController {
 		return loaiDichVuService.findAll();
 	}
 	
-	@GetMapping("/loaidichvu/{id}")
+	@GetMapping("/dsloaidichvu/{id}")
 	public LoaiDichVu findById(@PathVariable int id) {
 		return loaiDichVuService.findById(id);
 	}
 	
-	@PostMapping("/loaidichvu")
+	@PostMapping("/dsloaidichvu")
 	public LoaiDichVu addLoaiDichVu(@RequestBody LoaiDichVu loaiDichVu) {
 		loaiDichVu.setId(0);
 		loaiDichVuService.saveLoaiDichVu(loaiDichVu);
 		return loaiDichVu;
 	}
 	
-	@PutMapping("/loaidichvu")
+	@PutMapping("/dsloaidichvu")
 	public LoaiDichVu updateLoaiDichVu(@RequestBody LoaiDichVu loaiDichVu) {
 		loaiDichVuService.saveLoaiDichVu(loaiDichVu);
 		return loaiDichVu;
 	}
 	
-	@DeleteMapping("/loaidichvu/{id}")
+	@DeleteMapping("/dsloaidichvu/{id}")
 	public String deleteById(@PathVariable int id) {
 		LoaiDichVu loaiDichVu = loaiDichVuService.findById(id);
 		if (loaiDichVu == null) {

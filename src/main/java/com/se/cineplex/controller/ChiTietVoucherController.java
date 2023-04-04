@@ -25,7 +25,7 @@ public class ChiTietVoucherController {
 		return chiTietVoucherService.findAll();
 	}
 	
-	@PostMapping("/chitietvoucher")
+	@PostMapping("/dschitietvoucher")
 	public ChiTietVoucher addChiTietVoucher(@RequestBody ChiTietVoucher chiTietVoucher) {
 		chiTietVoucherService.saveChiTietVoucher(chiTietVoucher);
 		return chiTietVoucher;

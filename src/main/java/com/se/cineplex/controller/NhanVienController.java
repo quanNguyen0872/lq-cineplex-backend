@@ -23,25 +23,25 @@ public class NhanVienController {
 		return nhanVienService.findAll();
 	}
 
-	@GetMapping("/nhanvien/{id}")
+	@GetMapping("/dsnhanvien/{id}")
 	public NhanVien findById(@PathVariable int id) {
 		return nhanVienService.findById(id);
 	}
 
-	@PostMapping("/nhanvien")
+	@PostMapping("/dsnhanvien")
 	public NhanVien addNhanVien(@RequestBody NhanVien nhanVien) {
 		nhanVien.setId(0);
 		nhanVienService.saveNhanVien(nhanVien);
 		return nhanVien;
 	}
 
-	@PutMapping("/nhanvien")
+	@PutMapping("/dsnhanvien")
 	public NhanVien updateNhanVien(@RequestBody NhanVien nhanVien) {
 		nhanVienService.saveNhanVien(nhanVien);
 		return nhanVien;
 	}
 
-	@DeleteMapping("/nhanvien/{id}")
+	@DeleteMapping("/dsnhanvien/{id}")
 	public String deleteById(@PathVariable int id) {
 		NhanVien nhanVien = nhanVienService.findById(id);
 		if (nhanVien == null) {

@@ -27,25 +27,25 @@ public class DaoDienController {
 		return daoDienService.findAll();
 	}
 
-	@GetMapping("/daodien/{id}")
+	@GetMapping("/dsdaodien/{id}")
 	public DaoDien findById(@PathVariable int id) {
 		return daoDienService.findById(id);
 	}
 
-	@PostMapping("/daodien")
+	@PostMapping("/dsdaodien")
 	public DaoDien addDaoDien(@RequestBody DaoDien daoDien) {
 		daoDien.setId(0);
 		daoDienService.saveDaoDien(daoDien);
 		return daoDien;
 	}
 
-	@PutMapping("/daodien")
+	@PutMapping("/dsdaodien")
 	public DaoDien updateDaoDien(@RequestBody DaoDien daoDien) {
 		daoDienService.saveDaoDien(daoDien);
 		return daoDien;
 	}
 
-	@DeleteMapping("/daodien/{id}")
+	@DeleteMapping("/dsdaodien/{id}")
 	public String deleteById(@PathVariable int id) {
 		DaoDien daoDien = daoDienService.findById(id);
 		if (daoDien == null) {

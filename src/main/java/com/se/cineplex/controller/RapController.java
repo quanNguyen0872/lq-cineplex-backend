@@ -27,25 +27,25 @@ public class RapController {
 		return rapService.findAll();
 	}
 	
-	@GetMapping("/rap/{id}")
+	@GetMapping("/dsrap/{id}")
 	public Rap findById(@PathVariable int id) {
 		return rapService.findById(id);
 	}
 	
-	@PostMapping("/rap")
+	@PostMapping("/dsrap")
 	public Rap addRap(@RequestBody Rap rap) {
 		rap.setId(0);
 		rapService.saveRap(rap);
 		return rap;
 	}
 	
-	@PutMapping("/rap")
+	@PutMapping("/dsrap")
 	public Rap updateRap(@RequestBody Rap rap) {
 		rapService.saveRap(rap);
 		return rap;
 	}
 	
-	@DeleteMapping("/rap/{id}")
+	@DeleteMapping("/dsrap/{id}")
 	public String deleteById(@PathVariable int id) {
 		Rap rap = rapService.findById(id);
 		if (rap == null) {

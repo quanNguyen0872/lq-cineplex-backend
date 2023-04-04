@@ -25,13 +25,13 @@ public class ChiTietDichVuController {
 		return chiTietDichVuService.findAll();
 	}
 	
-	@PostMapping("/chitietdichvu")
+	@PostMapping("/dschitietdichvu")
 	public ChiTietDichVu addChiTietDichVu(@RequestBody ChiTietDichVu chiTietDichVu) {
 		chiTietDichVuService.saveChiTietDichVu(chiTietDichVu);
 		return chiTietDichVu;
 	}
 
-	@PutMapping("/chitietdichvu")
+	@PutMapping("/dschitietdichvu")
 	public ChiTietDichVu updateChiTietDichVu(@RequestBody ChiTietDichVu chiTietDichVu) {
 		chiTietDichVuService.saveChiTietDichVu(chiTietDichVu);
 		return chiTietDichVu;

@@ -27,25 +27,25 @@ public class DienVienController {
 		return dienVienService.findAll();
 	}
 
-	@GetMapping("/dienvien/{id}")
+	@GetMapping("/dsdienvien/{id}")
 	public DienVien findById(@PathVariable int id) {
 		return dienVienService.findById(id);
 	}
 
-	@PostMapping("/dienvien")
+	@PostMapping("/dsdienvien")
 	public DienVien addDienVien(@RequestBody DienVien dienVien) {
 		dienVien.setId(0);
 		dienVienService.saveDienVien(dienVien);
 		return dienVien;
 	}
 
-	@PutMapping("/dienvien")
+	@PutMapping("/dsdienvien")
 	public DienVien updateDienVien(@RequestBody DienVien dienVien) {
 		dienVienService.saveDienVien(dienVien);
 		return dienVien;
 	}
 
-	@DeleteMapping("/dienvien/{id}")
+	@DeleteMapping("/dsdienvien/{id}")
 	public String deleteById(@PathVariable int id) {
 		DienVien dienVien = dienVienService.findById(id);
 		if (dienVien == null) {

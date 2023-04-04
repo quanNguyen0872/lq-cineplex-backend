@@ -27,25 +27,25 @@ public class VeController {
 		return veService.findAll();
 	}
 	
-	@GetMapping("/ve/{id}")
+	@GetMapping("/dsve/{id}")
 	public Ve findById(@PathVariable int id) {
 		return veService.findById(id);
 	}
 	
-	@PostMapping("/ve")
+	@PostMapping("/dsve")
 	public Ve addVe(@RequestBody Ve ve) {
 		ve.setId(0);
 		veService.saveVe(ve);
 		return ve;
 	}
 	
-	@PutMapping("/ve")
+	@PutMapping("/dsve")
 	public Ve updateVe(@RequestBody Ve ve) {
 		veService.saveVe(ve);
 		return ve;
 	}
 	
-	@DeleteMapping("/ve/{id}")
+	@DeleteMapping("/dsve/{id}")
 	public String deleteById(@PathVariable int id) {
 		Ve ve = veService.findById(id);
 		if (ve == null) {

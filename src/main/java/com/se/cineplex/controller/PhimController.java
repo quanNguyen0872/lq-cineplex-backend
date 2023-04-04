@@ -27,25 +27,25 @@ public class PhimController {
 		return phimService.findAll();
 	}
 
-	@GetMapping("/phim/{id}")
+	@GetMapping("/dsphim/{id}")
 	public Phim findById(@PathVariable int id) {
 		return phimService.findById(id);
 	}
 
-	@PostMapping("/phim")
+	@PostMapping("/dsphim")
 	public Phim addPhim(@RequestBody Phim phim) {
 		phim.setId(0);
 		phimService.savePhim(phim);
 		return phim;
 	}
 
-	@PutMapping("/phim")
+	@PutMapping("/dsphim")
 	public Phim updatePhim(@RequestBody Phim phim) {
 		phimService.savePhim(phim);
 		return phim;
 	}
 
-	@DeleteMapping("/phim/{id}")
+	@DeleteMapping("/dsphim/{id}")
 	public String deleteById(@PathVariable int id) {
 		Phim phim = phimService.findById(id);
 		if (phim == null) {

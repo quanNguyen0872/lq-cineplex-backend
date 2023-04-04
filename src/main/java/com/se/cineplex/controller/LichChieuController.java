@@ -27,25 +27,25 @@ public class LichChieuController {
 		return lichChieuService.findAll();
 	}
 
-	@GetMapping("/lichchieu/{id}")
+	@GetMapping("/dslichchieu/{id}")
 	public LichChieu findById(@PathVariable int id) {
 		return lichChieuService.findById(id);
 	}
 
-	@PostMapping("/lichchieu")
+	@PostMapping("/dslichchieu")
 	public LichChieu addLichChieu(@RequestBody LichChieu lichChieu) {
 		lichChieu.setId(0);
 		lichChieuService.saveLichChieu(lichChieu);
 		return lichChieu;
 	}
 
-	@PutMapping("/lichchieu")
+	@PutMapping("/dslichchieu")
 	public LichChieu updateLichChieu(@RequestBody LichChieu lichChieu) {
 		lichChieuService.saveLichChieu(lichChieu);
 		return lichChieu;
 	}
 
-	@DeleteMapping("/lichchieu/{id}")
+	@DeleteMapping("/dsichchieu/{id}")
 	public String deleteById(@PathVariable int id) {
 		LichChieu lichChieu = lichChieuService.findById(id);
 		if (lichChieu == null) {

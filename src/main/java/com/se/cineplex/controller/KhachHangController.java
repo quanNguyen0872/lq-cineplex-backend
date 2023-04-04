@@ -27,25 +27,25 @@ public class KhachHangController {
 		return khachHangService.findAll();
 	}
 
-	@GetMapping("/khachhang/{id}")
+	@GetMapping("/dskhachhang/{id}")
 	public KhachHang findById(@PathVariable int id) {
 		return khachHangService.findById(id);
 	}
 
-	@PostMapping("/khachhang")
+	@PostMapping("/dskhachhang")
 	public KhachHang addKhachHang(@RequestBody KhachHang khachHang) {
 		khachHang.setId(0);
 		khachHangService.saveKhachHang(khachHang);
 		return khachHang;
 	}
 
-	@PutMapping("/khachhang")
+	@PutMapping("/dskhachhang")
 	public KhachHang updateKhachHang(@RequestBody KhachHang khachHang) {
 		khachHangService.saveKhachHang(khachHang);
 		return khachHang;
 	}
 
-	@DeleteMapping("/khachhang/{id}")
+	@DeleteMapping("/dskhachhang/{id}")
 	public String deleteById(@PathVariable int id) {
 		KhachHang khachHang = khachHangService.findById(id);
 		if (khachHang == null) {

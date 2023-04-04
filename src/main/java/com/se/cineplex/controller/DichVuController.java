@@ -27,25 +27,25 @@ public class DichVuController {
 		return dichVuService.findAll();
 	}
 	
-	@GetMapping("/dichvu/{id}")
+	@GetMapping("/dsdichvu/{id}")
 	public DichVu findById(@PathVariable int id) {
 		return dichVuService.findById(id);
 	}
 	
-	@PostMapping("/dichvu")
+	@PostMapping("/dsdichvu")
 	public DichVu addDichVu(@RequestBody DichVu dichVu) {
 		dichVu.setId(0);
 		dichVuService.saveDichVu(dichVu);
 		return dichVu;
 	}
 	
-	@PutMapping("/dichvu")
+	@PutMapping("/dsdichvu")
 	public DichVu updateDichVu(@RequestBody DichVu dichVu) {
 		dichVuService.saveDichVu(dichVu);
 		return dichVu;
 	}
 	
-	@DeleteMapping("/dichvu/{id}")
+	@DeleteMapping("/dsdichvu/{id}")
 	public String deleteById(@PathVariable int id) {
 		DichVu dichVu = dichVuService.findById(id);
 		if (dichVu == null) {

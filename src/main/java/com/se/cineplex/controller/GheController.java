@@ -43,12 +43,12 @@ public class GheController {
 		return gheService.findAllByMaPhongChieu(maPhongChieu);
 	}
 
-	@GetMapping("/ghe/{id}")
+	@GetMapping("/dsghe/{id}")
 	public Ghe findById(@PathVariable int id) {
 		return gheService.findById(id);
 	}
 
-	@PostMapping("/ghe")
+	@PostMapping("/dsghe")
 	public Ghe addGhe(@RequestBody Ghe ghe) {
 		ghe.setId(0);
 		gheService.saveGhe(ghe);
@@ -77,13 +77,13 @@ public class GheController {
 		return dsGhe;
 	}
 
-	@PutMapping("/ghe")
+	@PutMapping("/dsghe")
 	public Ghe updateGhe(@RequestBody Ghe ghe) {
 		gheService.saveGhe(ghe);
 		return ghe;
 	}
 
-	@DeleteMapping("/ghe/{id}")
+	@DeleteMapping("/dsghe/{id}")
 	public String deleteById(@PathVariable int id) {
 		Ghe ghe = gheService.findById(id);
 		if (ghe == null) {

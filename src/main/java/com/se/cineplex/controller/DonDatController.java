@@ -27,25 +27,25 @@ public class DonDatController {
 		return donDatService.findAll();
 	}
 	
-	@GetMapping("/dondat/{id}")
+	@GetMapping("/dsdondat/{id}")
 	public DonDat findById(@PathVariable int id) {
 		return donDatService.findById(id);
 	}
 	
-	@PostMapping("/dondat")
+	@PostMapping("/dsdondat")
 	public DonDat addDonDat(@RequestBody DonDat donDat) {
 		donDat.setId(0);
 		donDatService.saveDonDat(donDat);
 		return donDat;
 	}
 	
-	@PutMapping("/dondat")
+	@PutMapping("/dsdondat")
 	public DonDat updateDonDat(@RequestBody DonDat donDat) {
 		donDatService.saveDonDat(donDat);
 		return donDat;
 	}
 	
-	@DeleteMapping("/dondat/{id}")
+	@DeleteMapping("/dsdondat/{id}")
 	public String deleteById(@PathVariable int id) {
 		DonDat donDat = donDatService.findById(id);
 		if (donDat == null) {

@@ -28,25 +28,25 @@ public class TheLoaiController {
 		return theLoaiService.findAll();
 	}
 	
-	@GetMapping("/theloai/{id}")
+	@GetMapping("/dstheloai/{id}")
 	public TheLoai findById(@PathVariable int id) {
 		return theLoaiService.findById(id);
 	}
 	
-	@PostMapping("/theloai")
+	@PostMapping("/dstheloai")
 	public TheLoai addTheLoai(@RequestBody TheLoai theLoai) {
 		theLoai.setId(0);
 		theLoaiService.saveTheLoai(theLoai);
 		return theLoai;
 	}
 	
-	@PutMapping("/theloai")
+	@PutMapping("/dstheloai")
 	public TheLoai updateTheLoai(@RequestBody TheLoai theLoai) {
 		theLoaiService.saveTheLoai(theLoai);
 		return theLoai;
 	}
 	
-	@DeleteMapping("/theloai/{id}")
+	@DeleteMapping("/dstheloai/{id}")
 	public String deleteById(@PathVariable int id) {
 		TheLoai theLoai = theLoaiService.findById(id);
 		if (theLoai == null) {
