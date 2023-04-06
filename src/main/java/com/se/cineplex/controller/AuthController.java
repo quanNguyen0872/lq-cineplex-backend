@@ -27,6 +27,7 @@ import com.se.cineplex.entity.Role;
 import com.se.cineplex.entity.User;
 import com.se.cineplex.payload.request.LoginRequest;
 import com.se.cineplex.payload.request.SignupRequest;
+import com.se.cineplex.payload.response.JwtResponse;
 import com.se.cineplex.payload.response.MessageResponse;
 import com.se.cineplex.payload.response.UserInfoResponse;
 import com.se.cineplex.repository.RoleRepository;
@@ -64,12 +65,15 @@ public class AuthController {
 		UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
 
 		ResponseCookie jwtCookie = jwtUtils.generateJwtCookie(userDetails);
+		
+		String jwt = jwtUtils.generateJwtToken(authentication);
 
 		List<String> roles = userDetails.getAuthorities().stream().map(item -> item.getAuthority())
 				.collect(Collectors.toList());
 
-		return ResponseEntity.ok().header(HttpHeaders.SET_COOKIE, jwtCookie.toString()).body(
-				new UserInfoResponse(userDetails.getId(), userDetails.getUsername(), userDetails.getEmail(), roles));
+		return ResponseEntity.ok().header(HttpHeaders.SET_COOKIE, jwtCookie.toString()).body(new JwtResponse(jwt,
+				userDetails.getId(), userDetails.getUsername (), userDetails.getEmail(),
+				roles));
 	}
 
 	@PostMapping("/signup")
