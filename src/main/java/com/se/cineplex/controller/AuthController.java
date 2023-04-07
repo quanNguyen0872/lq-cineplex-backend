@@ -21,7 +21,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.se.cineplex.entity.ERole;
 import com.se.cineplex.entity.Role;
 import com.se.cineplex.entity.User;
@@ -29,7 +28,6 @@ import com.se.cineplex.payload.request.LoginRequest;
 import com.se.cineplex.payload.request.SignupRequest;
 import com.se.cineplex.payload.response.JwtResponse;
 import com.se.cineplex.payload.response.MessageResponse;
-import com.se.cineplex.payload.response.UserInfoResponse;
 import com.se.cineplex.repository.RoleRepository;
 import com.se.cineplex.repository.UserRepository;
 import com.se.cineplex.security.jwt.JwtUtils;
@@ -65,15 +63,14 @@ public class AuthController {
 		UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
 
 		ResponseCookie jwtCookie = jwtUtils.generateJwtCookie(userDetails);
-		
+
 		String jwt = jwtUtils.generateJwtToken(authentication);
 
 		List<String> roles = userDetails.getAuthorities().stream().map(item -> item.getAuthority())
 				.collect(Collectors.toList());
 
-		return ResponseEntity.ok().header(HttpHeaders.SET_COOKIE, jwtCookie.toString()).body(new JwtResponse(jwt,
-				userDetails.getId(), userDetails.getUsername (), userDetails.getEmail(),
-				roles));
+		return ResponseEntity.ok().header(HttpHeaders.SET_COOKIE, jwtCookie.toString()).body(
+				new JwtResponse(jwt, userDetails.getId(), userDetails.getUsername(), userDetails.getEmail(), roles));
 	}
 
 	@PostMapping("/signup")
@@ -111,12 +108,6 @@ public class AuthController {
 					Role modRole = roleRepository.findByName(ERole.ROLE_MODERATOR)
 							.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
 					roles.add(modRole);
-
-					break;
-				case "user_read":
-					Role userReadRole = roleRepository.findByName(ERole.ROLE_USER_READ)
-							.orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-					roles.add(userReadRole);
 
 					break;
 				default:
