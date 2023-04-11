@@ -12,5 +12,7 @@ public interface PhimService {
 	public void savePhim(Phim phim);
 
 	public void deleteById(int phimId);
+	
+	public List<Phim> getDSPhimByMaRap(int maRap);
 	 
 }

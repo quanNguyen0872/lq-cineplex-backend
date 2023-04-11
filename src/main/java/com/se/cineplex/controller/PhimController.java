@@ -26,9 +26,14 @@ public class PhimController {
 	private PhimService phimService;
 
 	@GetMapping("/dsphim")
-	@PreAuthorize("hasRole('ADMIN')")
+//	@PreAuthorize("hasRole('ADMIN')")
 	public List<Phim> findAll() {
 		return phimService.findAll();
+	}
+	
+	@GetMapping("/dsphim/marap/{maRap}")
+	public List<Phim> getDSPhimByMaRap(@PathVariable int maRap) {
+		return phimService.getDSPhimByMaRap(maRap);
 	}
 
 	@GetMapping("/dsphim/{id}")

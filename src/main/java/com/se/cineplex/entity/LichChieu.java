@@ -3,6 +3,9 @@ package com.se.cineplex.entity;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -28,6 +31,7 @@ public class LichChieu {
 
 	@ManyToOne
 	@JoinColumn(name = "ma_phim")
+	@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 	private Phim phim;
 
 	@ManyToOne
@@ -35,6 +39,7 @@ public class LichChieu {
 	private PhongChieu phongChieu;
 
 	@OneToMany(mappedBy = "lichChieu")
+	@JsonIgnore
 	private List<Ve> dsVe;
 
 	private String trangThai;

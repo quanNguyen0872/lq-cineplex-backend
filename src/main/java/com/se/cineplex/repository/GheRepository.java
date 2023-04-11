@@ -16,5 +16,13 @@ public interface GheRepository extends JpaRepository<Ghe, Integer> {
 	 
 	 @Query(value="select * from ghe where ma_phongchieu= :maPhongChieu", nativeQuery = true)
 	 List<Ghe> getAllGheByMaPhongChieu(int maPhongChieu);
+	 
+	 @Query(value="SELECT ghe.* \n"
+	 		+ "FROM ghe INNER JOIN ve ON ghe.id = ve.ma_ghe\n"
+	 		+ "INNER JOIN lichchieu ON lichchieu.id = ve.ma_lichchieu\n"
+	 		+ "INNER JOIN phongchieu ON ghe.ma_phongchieu = phongchieu.id \n"
+	 		+ "AND lichchieu.ma_phongchieu = phongchieu.id \n"
+	 		+ "WHERE ve.ma_ghe = ghe.id AND ma_lichchieu = :maLichChieu", nativeQuery = true)
+	 List<Ghe> getDsGheDaBanLichChieu(int maLichChieu);
 
 }

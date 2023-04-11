@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +21,7 @@ import com.se.cineplex.service.GheService;
 import com.se.cineplex.service.LoaiGheService;
 import com.se.cineplex.service.PhongChieuService;
 
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api")
 public class GheController {
@@ -41,6 +43,11 @@ public class GheController {
 	@GetMapping("/dsghe/maphongchieu/{maPhongChieu}")
 	public List<Ghe> findAllByMaPhongChieu(@PathVariable int maPhongChieu) {
 		return gheService.findAllByMaPhongChieu(maPhongChieu);
+	}
+	
+	@GetMapping("/dsghe/malichchieu/{maLichChieu}")
+	public List<Ghe> getDsGheDaBanLichChieu(@PathVariable int maLichChieu){
+		return gheService.getDsGheDaBanLichChieu(maLichChieu);
 	}
 
 	@GetMapping("/dsghe/{id}")

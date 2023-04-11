@@ -7,6 +7,8 @@ import com.se.cineplex.entity.LichChieu;
 public interface LichChieuService {
 
 	public List<LichChieu> findAll();
+	
+	public List<LichChieu> getDsLichChieuByPhimRap(int maPhim, int maRap);
 
 	public LichChieu findById(int lichChieuId);
 

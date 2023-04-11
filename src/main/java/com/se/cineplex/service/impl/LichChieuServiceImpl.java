@@ -41,4 +41,10 @@ public class LichChieuServiceImpl implements LichChieuService{
 		lichChieuRepository.deleteById(lichChieuId);
 	}
 
+	@Override
+	@Transactional
+	public List<LichChieu> getDsLichChieuByPhimRap(int maPhim, int maRap) {
+		return lichChieuRepository.getDsLichChieuByPhimRap(maPhim, maRap);
+	}
+
 }

@@ -8,6 +8,8 @@ public interface GheService {
 	public List<Ghe> findAll();
 	
 	public List<Ghe> findAllByMaPhongChieu(int maPhongChieu);
+	
+	public List<Ghe> getDsGheDaBanLichChieu(int maLichChieu); 
 
 	public Ghe findById(int gheId);
 

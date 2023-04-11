@@ -41,4 +41,10 @@ public class PhimServiceImpl implements PhimService{
 		phimRepository.deleteById(phimId);
 	}
 
+	@Override
+	@Transactional
+	public List<Phim> getDSPhimByMaRap(int maRap) {
+		 return phimRepository.getDSPhimByMaRap(maRap);
+	}
+
 }

@@ -53,4 +53,10 @@ public class GheServiceImpl implements GheService {
 		return gheRepository.getAllGheByMaPhongChieu(maPhongChieu);
 	}
 
+	@Override
+	@Transactional
+	public List<Ghe> getDsGheDaBanLichChieu(int maLichChieu) {
+		return gheRepository.getDsGheDaBanLichChieu(maLichChieu);
+	}
+
 }
