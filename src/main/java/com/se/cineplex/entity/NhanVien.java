@@ -1,8 +1,9 @@
 package com.se.cineplex.entity;
 
-import java.io.Serializable;
+import java.io.Serializable; 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.AttributeOverride;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -30,6 +31,7 @@ public class NhanVien extends NguoiDung implements Serializable {
 	private ChucVu chucVu;
 
 	@OneToMany(mappedBy = "nhanVien")
+	@JsonIgnore
 	private List<DonDat> dsDonDat;
 
 	public NhanVien() {

@@ -2,7 +2,11 @@ package com.se.cineplex.entity;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -11,6 +15,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "chucvu")
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 public class ChucVu {
 
 	@Id
@@ -19,7 +24,8 @@ public class ChucVu {
 
 	private String tenChucVu;
 	
-	@OneToMany(mappedBy = "chucVu")
+	@OneToMany(fetch = FetchType.LAZY,mappedBy = "chucVu")
+	@JsonIgnore
 	private List<NhanVien> dsNhanVien;
 
 	public ChucVu() {

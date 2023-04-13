@@ -1,6 +1,6 @@
 package com.se.cineplex.service.impl;
 
-import java.util.List;
+import java.util.List; 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,6 +39,12 @@ public class NhanVienServiceImpl implements NhanVienService{
 	@Transactional
 	public void deleteById(int nhanVienId) {
 		nhanVienRepository.deleteById(nhanVienId);
+	}
+
+	@Override
+	@Transactional
+	public NhanVien getNhanVienByEmail(String email) {
+		return nhanVienRepository.getNhanVienByEmail(email);
 	}
 
 }
