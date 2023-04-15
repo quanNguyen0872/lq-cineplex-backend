@@ -1,7 +1,5 @@
 package com.se.cineplex.entity;
 
-import java.io.Serializable;
-
 import jakarta.persistence.Entity;
 
 import jakarta.persistence.Id;
@@ -11,12 +9,7 @@ import jakarta.persistence.ManyToOne;
 
 @Entity
 @IdClass(ChiTietDichVuPK.class)
-public class ChiTietDichVu implements Serializable {
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+public class ChiTietDichVu {
 
 	@Id
 	@ManyToOne
@@ -38,6 +31,14 @@ public class ChiTietDichVu implements Serializable {
 
 	public ChiTietDichVu(int soLuong, double thanhTien) {
 		super();
+		this.soLuong = soLuong;
+		this.thanhTien = thanhTien;
+	}
+
+	public ChiTietDichVu(DonDat donDat, DichVu dichVu, int soLuong, double thanhTien) {
+		super();
+		this.donDat = donDat;
+		this.dichVu = dichVu;
 		this.soLuong = soLuong;
 		this.thanhTien = thanhTien;
 	}
@@ -64,6 +65,14 @@ public class ChiTietDichVu implements Serializable {
 
 	public void setDichVu(DichVu dichVu) {
 		this.dichVu = dichVu;
+	}
+
+	public DonDat getDonDat() {
+		return donDat;
+	}
+
+	public void setDonDat(DonDat donDat) {
+		this.donDat = donDat;
 	}
 
 	@Override

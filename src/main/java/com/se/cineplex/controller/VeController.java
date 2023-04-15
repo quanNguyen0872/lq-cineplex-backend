@@ -41,6 +41,15 @@ public class VeController {
 		return ve;
 	}
 	
+	@PostMapping("/dsve/list")
+	public List<Ve> addVe(@RequestBody List<Ve> dsVe) {
+		for (Ve ve : dsVe) {
+			ve.setId(0);
+		}
+		veService.saveAllVe(dsVe);
+		return dsVe;
+	}
+	
 	@PutMapping("/dsve")
 	public Ve updateVe(@RequestBody Ve ve) {
 		veService.saveVe(ve);

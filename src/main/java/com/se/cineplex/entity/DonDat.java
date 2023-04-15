@@ -1,5 +1,6 @@
 package com.se.cineplex.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -16,7 +17,12 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "dondat")
-public class DonDat {
+public class DonDat implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -50,8 +56,12 @@ public class DonDat {
 		super();
 	}
 
-	public DonDat(int id, Date ngayDat, double tongTien, KhachHang khachHang, NhanVien nhanVien, List<Ve> dsVe,
-			List<ChiTietDichVu> dsChiTietDichVu, List<ChiTietVoucher> dsChiTietVoucher) {
+	public DonDat(int id) {
+		super();
+		this.id = id;
+	}
+
+	public DonDat(int id, Date ngayDat, double tongTien, KhachHang khachHang, NhanVien nhanVien, List<Ve> dsVe) {
 		super();
 		this.id = id;
 		this.ngayDat = ngayDat;
@@ -59,8 +69,6 @@ public class DonDat {
 		this.khachHang = khachHang;
 		this.nhanVien = nhanVien;
 		this.dsVe = dsVe;
-		this.dsChiTietDichVu = dsChiTietDichVu;
-		this.dsChiTietVoucher = dsChiTietVoucher;
 	}
 
 	public int getId() {

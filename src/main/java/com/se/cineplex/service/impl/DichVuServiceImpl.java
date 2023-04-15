@@ -12,8 +12,8 @@ import com.se.cineplex.service.DichVuService;
 import jakarta.transaction.Transactional;
 
 @Service
-public class DichVuServiceImpl implements DichVuService{
-	
+public class DichVuServiceImpl implements DichVuService {
+
 	@Autowired
 	private DichVuRepository dichVuRepository;
 

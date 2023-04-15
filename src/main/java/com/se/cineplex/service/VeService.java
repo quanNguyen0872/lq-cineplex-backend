@@ -11,6 +11,8 @@ public interface VeService {
 	public Ve findById(int veId);
 
 	public void saveVe(Ve ve);
+	
+	public void saveAllVe(List<Ve> dsVe);
 
 	public void deleteById(int veId);
 

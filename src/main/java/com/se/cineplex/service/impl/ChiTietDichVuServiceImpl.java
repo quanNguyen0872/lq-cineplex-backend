@@ -29,4 +29,10 @@ public class ChiTietDichVuServiceImpl implements ChiTietDichVuService{
 		chiTietDichVuRepository.save(chiTietDichVu);
 	}
 
+	@Override
+	@Transactional
+	public void saveDsChiTietDichVu(List<ChiTietDichVu> dsChiTietDichVu) {
+		 chiTietDichVuRepository.saveAll(dsChiTietDichVu);
+	}
+
 }

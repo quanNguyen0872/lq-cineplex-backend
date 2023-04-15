@@ -4,8 +4,10 @@ import java.io.Serializable;
 import java.util.Objects;
 
 import jakarta.persistence.Embeddable;
+import lombok.NoArgsConstructor;
 
 @Embeddable
+@NoArgsConstructor
 public class ChiTietDichVuPK implements Serializable {
 
 	/**
@@ -17,14 +19,6 @@ public class ChiTietDichVuPK implements Serializable {
 
 	private int dichVu;
 
-	public ChiTietDichVuPK() {
-		super();
-	}
-
-	@Override
-	public String toString() {
-		return "ChiTietDichVuPK [donDat=" + donDat + ", dichVu=" + dichVu + "]";
-	}
 
 	@Override
 	public int hashCode() {

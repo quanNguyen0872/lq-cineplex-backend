@@ -32,6 +32,12 @@ public class ChiTietDichVuController {
 		chiTietDichVuService.saveChiTietDichVu(chiTietDichVu);
 		return chiTietDichVu;
 	}
+	
+	@PostMapping("/dschitietdichvu/list")
+	public List<ChiTietDichVu> addDsChiTietDichVu(@RequestBody List<ChiTietDichVu> dsChiTietDichVu) {
+		chiTietDichVuService.saveDsChiTietDichVu(dsChiTietDichVu);
+		return dsChiTietDichVu;
+	}
 
 	@PutMapping("/dschitietdichvu")
 	public ChiTietDichVu updateChiTietDichVu(@RequestBody ChiTietDichVu chiTietDichVu) {

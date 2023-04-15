@@ -47,6 +47,11 @@ public class DichVu implements Serializable {
 		super();
 	}
 
+	public DichVu(int id) {
+		super();
+		this.id = id;
+	}
+
 	public DichVu(int id, String tenDichVu, double donGia, String hinhAnh, String moTa) {
 		super();
 		this.id = id;

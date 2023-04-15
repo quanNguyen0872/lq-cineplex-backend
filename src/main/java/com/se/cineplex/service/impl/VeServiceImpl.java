@@ -41,4 +41,10 @@ public class VeServiceImpl implements VeService{
 		veRepository.deleteById(veId);
 	}
 
+	@Override
+	@Transactional
+	public void saveAllVe(List<Ve> dsVe) {
+		 veRepository.saveAll(dsVe);
+	}
+
 }
