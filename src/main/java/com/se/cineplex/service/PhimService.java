@@ -6,6 +6,8 @@ import com.se.cineplex.entity.Phim;
 
 public interface PhimService {
 	public List<Phim> findAll();
+	
+	public List<Phim> getDsPhimDangSapChieu();
 
 	public Phim findById(int phimId);
 

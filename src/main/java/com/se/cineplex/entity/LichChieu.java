@@ -1,8 +1,9 @@
 package com.se.cineplex.entity;
 
-import java.util.Date;
+import java.sql.Date;
+import java.sql.Time;
 import java.util.List;
-
+ 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -22,10 +23,10 @@ public class LichChieu {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-
-	private Date gioBatDau;
-
-	private Date gioKetThuc;
+	 
+	private Time gioBatDau;
+	
+	private Time gioKetThuc;
 
 	private Date ngayChieu;
 
@@ -48,7 +49,7 @@ public class LichChieu {
 		super();
 	}
 
-	public LichChieu(int id, Date gioBatDau, Date gioKetThuc, Date ngayChieu, Phim phim, PhongChieu phongChieu,
+	public LichChieu(int id, Time gioBatDau, Time gioKetThuc, Date ngayChieu, Phim phim, PhongChieu phongChieu,
 			String trangThai) {
 		super();
 		this.id = id;
@@ -68,19 +69,19 @@ public class LichChieu {
 		this.id = id;
 	}
 
-	public Date getGioBatDau() {
+	public Time getGioBatDau() {
 		return gioBatDau;
 	}
 
-	public void setGioBatDau(Date gioBatDau) {
+	public void setGioBatDau(Time gioBatDau) {
 		this.gioBatDau = gioBatDau;
 	}
 
-	public Date getGioKetThuc() {
+	public Time getGioKetThuc() {
 		return gioKetThuc;
 	}
 
-	public void setGioKetThuc(Date gioKetThuc) {
+	public void setGioKetThuc(Time gioKetThuc) {
 		this.gioKetThuc = gioKetThuc;
 	}
 

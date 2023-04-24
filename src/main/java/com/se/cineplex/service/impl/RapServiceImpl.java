@@ -41,4 +41,10 @@ public class RapServiceImpl implements RapService{
 		rapRepository.deleteById(rapId);
 	}
 
+	@Override
+	@Transactional
+	public List<Rap> getDSRapByTinhThanhPho(String tinhThanhPho) {
+		return rapRepository.getDSRapByTinhThanhPho(tinhThanhPho);
+	}
+
 }

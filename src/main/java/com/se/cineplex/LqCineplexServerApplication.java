@@ -1,6 +1,5 @@
 package com.se.cineplex;
 
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -9,6 +8,8 @@ public class LqCineplexServerApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(LqCineplexServerApplication.class, args);
+		
+		 
 	}
 
 }

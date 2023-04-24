@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.se.cineplex.entity.Rap;
@@ -25,8 +26,14 @@ public class RapController {
 	private RapService rapService;
 	
 	@GetMapping("/dsrap")
-	public List<Rap> findAll() {
-		return rapService.findAll();
+	public List<Rap> findAll(@RequestParam(required = false) String tinhThanhPho) {
+	
+			if(tinhThanhPho == null) {
+				return rapService.findAll();
+			} else {
+				return rapService.getDSRapByTinhThanhPho(tinhThanhPho);
+			}
+		 
 	}
 	
 	@GetMapping("/dsrap/{id}")

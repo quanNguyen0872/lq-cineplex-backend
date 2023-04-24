@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.se.cineplex.entity.PhongChieu;
@@ -27,6 +28,14 @@ public class PhongChieuController {
 	@GetMapping("/dsphongchieu")
 	public List<PhongChieu> findAll() {
 		return phongChieuService.findAll();
+	}
+
+	@GetMapping("/dsphongchieu/dsphongtrong")
+	public List<PhongChieu> getDsPhongChieuTrong(@RequestParam int maRap,
+			@RequestParam String ngayChieu, @RequestParam String gioBatDau,
+			@RequestParam String gioKetThuc) {
+		return phongChieuService.getDsPhongTrong(maRap, ngayChieu, gioBatDau, gioKetThuc);
+
 	}
 
 	@GetMapping("/dsphongchieu/{id}")

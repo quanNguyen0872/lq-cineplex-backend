@@ -41,4 +41,10 @@ public class PhongChieuServiceImpl implements PhongChieuService{
 		phongChieuRepository.deleteById(phongChieuId);
 	}
 
+	@Override
+	@Transactional
+	public List<PhongChieu> getDsPhongTrong(int maRap, String ngayChieu, String gioBatDau, String gioKetThuc) {
+		return phongChieuRepository.getDsPhongChieuTrong(maRap, ngayChieu, gioBatDau, gioKetThuc);
+	}
+
 }

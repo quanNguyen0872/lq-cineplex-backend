@@ -8,6 +8,8 @@ public interface RapService {
 	public List<Rap> findAll();
 
 	public Rap findById(int rapId);
+	
+	public List<Rap> getDSRapByTinhThanhPho(String tinhThanhPho);
 
 	public void saveRap(Rap rap);
 

@@ -47,4 +47,10 @@ public class PhimServiceImpl implements PhimService{
 		 return phimRepository.getDSPhimByMaRap(maRap);
 	}
 
+	@Override
+	@Transactional
+	public List<Phim> getDsPhimDangSapChieu() {
+		return phimRepository.getDSPhimDangSapChieu();
+	}
+
 }

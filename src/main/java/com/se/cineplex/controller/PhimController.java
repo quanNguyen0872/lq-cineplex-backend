@@ -35,6 +35,11 @@ public class PhimController {
 	public List<Phim> getDSPhimByMaRap(@PathVariable int maRap) {
 		return phimService.getDSPhimByMaRap(maRap);
 	}
+	
+	@GetMapping("/dsphim/dangsapchieu")
+	public List<Phim> getDSPhimDangSapChieu() {
+		return phimService.getDsPhimDangSapChieu();
+	}
 
 	@GetMapping("/dsphim/{id}")
 	public Phim findById(@PathVariable int id) {

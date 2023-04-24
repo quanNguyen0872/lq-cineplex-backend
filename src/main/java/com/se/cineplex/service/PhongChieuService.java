@@ -6,6 +6,8 @@ import com.se.cineplex.entity.PhongChieu;
 
 public interface PhongChieuService {
 	public List<PhongChieu> findAll();
+	
+	public List<PhongChieu> getDsPhongTrong(int maRap, String ngayChieu, String gioBatDau, String gioKetThuc);
 
 	public PhongChieu findById(int phongChieuId);
 
