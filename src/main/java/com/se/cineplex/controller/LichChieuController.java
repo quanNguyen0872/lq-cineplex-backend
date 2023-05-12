@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.se.cineplex.entity.LichChieu;
@@ -31,6 +32,11 @@ public class LichChieuController {
 	@GetMapping("/dslichchieu/maPhim/{maPhim}/maRap/{maRap}")
 	public List<LichChieu> getDsLichChieuByPhimRap(@PathVariable int maPhim, @PathVariable int maRap) {
 		return lichChieuService.getDsLichChieuByPhimRap(maPhim, maRap);
+	}
+	
+	@GetMapping("/dslichchieu/maPhim/maRap/ngayChieu")
+	public List<LichChieu> getDsLichChieuByPhimRapNgayChieu(@RequestParam int maPhim, @RequestParam int maRap, @RequestParam  String ngayChieu) {
+		return lichChieuService.getDsLichChieuByPhimRapNgayChieu(maPhim, maRap, ngayChieu);
 	}
 
 	@GetMapping("/dslichchieu/{id}")

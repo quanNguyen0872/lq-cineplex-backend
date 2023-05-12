@@ -47,4 +47,10 @@ public class LichChieuServiceImpl implements LichChieuService{
 		return lichChieuRepository.getDsLichChieuByPhimRap(maPhim, maRap);
 	}
 
+	@Override
+	@Transactional
+	public List<LichChieu> getDsLichChieuByPhimRapNgayChieu(int maPhim, int maRap, String ngayChieu) {
+		return lichChieuRepository.getDsLichChieuByPhimRapNgayChieu(maPhim, maRap, ngayChieu);
+	}
+
 }

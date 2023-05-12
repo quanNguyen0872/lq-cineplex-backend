@@ -41,4 +41,10 @@ public class KhachHangServiceImpl implements KhachHangService{
 		khachHangRepository.deleteById(khachHangId);
 	}
 
+	@Override
+	@Transactional
+	public KhachHang getKhachHangByEmail(String email) {
+		 return khachHangRepository.getKhachHangByEmail(email);
+	}
+
 }

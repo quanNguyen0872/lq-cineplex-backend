@@ -1,6 +1,6 @@
 package com.se.cineplex.controller;
 
-import java.util.List;
+import java.util.List; 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -32,6 +32,11 @@ public class KhachHangController {
 	@GetMapping("/dskhachhang/{id}")
 	public KhachHang findById(@PathVariable int id) {
 		return khachHangService.findById(id);
+	}
+	
+	@GetMapping("/dskhachhang/email/{email}")
+	public KhachHang getNhanVienByEmail(@PathVariable String email) {
+		return khachHangService.getKhachHangByEmail(email);
 	}
 
 	@PostMapping("/dskhachhang")
