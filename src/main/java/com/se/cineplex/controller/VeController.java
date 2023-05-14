@@ -29,6 +29,11 @@ public class VeController {
 		return veService.findAll();
 	}
 	
+	@GetMapping("/dsve/dondat/{maDonDat}")
+	public List<Ve> getDsVeMaDonDat(@PathVariable int maDonDat) {
+		return veService.getDsVeMaDonDat(maDonDat);
+	}
+	
 	@GetMapping("/dsve/{id}")
 	public Ve findById(@PathVariable int id) {
 		return veService.findById(id);

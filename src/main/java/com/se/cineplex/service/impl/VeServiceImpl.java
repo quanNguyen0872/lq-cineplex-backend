@@ -47,4 +47,10 @@ public class VeServiceImpl implements VeService{
 		 veRepository.saveAll(dsVe);
 	}
 
+	@Override
+	@Transactional
+	public List<Ve> getDsVeMaDonDat(int maDonDat) {
+		 return veRepository.getDsVeMaDonDat(maDonDat);
+	}
+
 }

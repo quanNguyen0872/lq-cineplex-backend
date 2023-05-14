@@ -9,6 +9,8 @@ public interface VeService {
 	public List<Ve> findAll();
 
 	public Ve findById(int veId);
+	
+	public List<Ve> getDsVeMaDonDat(int maDonDat);
 
 	public void saveVe(Ve ve);
 	
