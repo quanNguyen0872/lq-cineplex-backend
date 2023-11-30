@@ -1,8 +1,3 @@
-amazonProperties:
-   endpointUrl: https://s3.ap-southeast-1.amazonaws.com
-   accessKey: AKIARE7LQQVXZ7XEGG25
-   secretKey: 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
-   bucketName: lqcineplex
 spring:
  servlet:
   multipart:
